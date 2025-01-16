@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,11 +42,6 @@
             align-items: center;
             padding: 10px 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .menu .logo {
-            flex-grow: 1;
-            text-align: center;
         }
 
         .menu ul {
@@ -211,32 +205,11 @@
                 text-align: center;
             }
         }
-
-        /* Футер */
-        footer {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-            color: #bbb;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #1abc9c;
-        }
-
-        footer a:hover {
-            color: #16a085;
-        }
     </style>
 </head>
-
 <body>
     <!-- Меню -->
     <nav class="menu">
-        <div class="logo">
-            <img src="https://via.placeholder.com/150x50.png?text=Logo" alt="Логотип">
-        </div>
         <span class="menu-icon" id="menu-icon">
             <span></span>
             <span></span>
@@ -245,18 +218,11 @@
         <ul id="menu-items" class="hidden">
             <li><a href="#">Главная</a></li>
             <li><a href="#about">О нас</a></li>
-            <li>
-                <a href="#">Услуги</a>
-                <ul>
-                    <li><a href="#service1">Услуга 1</a></li>
-                    <li><a href="#service2">Услуга 2</a></li>
-                    <li><a href="#service3">Услуга 3</a></li>
-                </ul>
-            </li>
+            <li><a href="#services">Услуги</a></li>
             <li><a href="#contact">Контакты</a></li>
         </ul>
     </nav>
-
+    
     <!-- Секция с видео и текстом -->
     <section class="hero-section">
         <div class="video-container">
@@ -271,7 +237,7 @@
             <button onclick="window.location.href='http://example.com'">Перейти на сайт</button>
         </div>
     </section>
-
+    
     <!-- Отзывы -->
     <section id="reviews" class="reviews-section">
         <h2>Отзывы наших клиентов</h2>
@@ -296,43 +262,37 @@
             </div>
         </div>
     </section>
-
-    <!-- Футер -->
-    <footer>
-        <p>&copy; 2025 Все права защищены. <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
-    </footer>
-
+    
     <!-- Скрипт подключения Owl Carousel -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function(){
             $('.owl-carousel').owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: false,
+                loop:true,
+                margin:10,
+                nav:false,
                 dots: true,
-                responsive: {
-                    0: {
-                        items: 1
+                responsive:{
+                    0:{
+                        items:1
                     },
-                    600: {
-                        items: 2
+                    600:{
+                        items:2
                     },
-                    1000: {
-                        items: 3
+                    1000:{
+                        items:3
                     }
                 }
             });
         });
 
         // Скрипт для бургер-меню
-        document.getElementById('menu-icon').addEventListener('click', function () {
+        document.getElementById('menu-icon').addEventListener('click', function() {
             const menuItems = document.getElementById('menu-items');
             menuItems.classList.toggle('hidden');
             menuItems.classList.toggle('visible');
         });
     </script>
 </body>
-
 </html>
