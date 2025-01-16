@@ -1,20 +1,27 @@
+// script.js
 $(document).ready(function () {
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
-        nav: true,
+        nav: false,
+        dots: true,
         responsive: {
-            0: { items: 1 },
-            600: { items: 2 },
-            1000: { items: 3 }
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
         }
     });
 });
 
 const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links-mobile');
+const navLinksMobile = document.querySelector('.nav-links-mobile');
 
 burger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    navLinksMobile.classList.toggle('active');
 });
-
