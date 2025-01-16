@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Накрутка онлайн</title>
+    <title>Классная страница</title>
     <!-- Подключение Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
@@ -82,8 +82,29 @@
                 display: none;
             }
 
+            .menu ul.visible {
+                display: flex;
+            }
+
             .menu-icon {
                 display: flex;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu ul {
+                display: flex;
+                flex-direction: row;
+                position: static;
+                background-color: transparent;
+            }
+
+            .menu ul.hidden {
+                display: flex; /* Всегда отображать меню на больших экранах */
+            }
+
+            .menu-icon {
+                display: none;
             }
         }
 
