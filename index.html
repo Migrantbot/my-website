@@ -258,8 +258,9 @@
 </head>
 <body>
     <!-- Меню -->
+     <!-- Меню -->
     <nav class="navbar">
-        <a href="https://smmpirat.ru" class="nav-logo">SMMpirat</a>
+        <a href="#" class="nav-logo">SMMpirat</a>
         <ul class="nav-links">
             <li><a href="#services">Услуги</a>
                 <ul class="dropdown">
@@ -279,6 +280,26 @@
             <li><a href="#reviews">Отзывы</a></li>
         </ul>
     </nav>
+
+    <!-- Остальная структура страницы -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const burger = document.querySelector(".burger");
+            const mobileMenu = document.querySelector(".nav-links-mobile");
+
+            burger.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("active");
+                });
+            });
+        });
+    </script>
 
     <!-- Главный экран -->
     <header class="hero" id="home">
