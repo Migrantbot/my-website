@@ -29,97 +29,10 @@
             color: #16a085;
         }
 
-        /* Стили меню */
-        .menu {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
+        
 
-        .menu ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 20px;
-        }
 
-        .menu ul li a {
-            font-size: 1rem;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu ul li a:hover {
-            color: #16a085;
-        }
-
-        .menu ul.hidden {
-            display: none;
-            left: 0;
-            width: 100%;
-            background-color: #111;
-            padding: 10px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .menu ul.visible {
-            display: flex;
-        }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .menu-icon span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: #fff;
-        }
-
-        @media (max-width: 768px) {
-            .menu ul {
-                display: none;
-            }
-
-            .menu ul.visible {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: flex;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .menu ul {
-                display: flex;
-                flex-direction: row;
-                position: static;
-                background-color: transparent;
-                box-shadow: none;
-            }
-
-            .menu ul.hidden {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: none;
-            }
-        }
+       
 
         /* Hero-секция */
         .hero-section {
@@ -208,20 +121,7 @@
     </style>
 </head>
 <body>
-    <!-- Меню -->
-    <nav class="menu">
-        <span class="menu-icon" id="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <ul id="menu-items" class="hidden">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </nav>
+   
     
     <!-- Секция с видео и текстом -->
     <section class="hero-section">
