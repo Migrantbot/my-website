@@ -92,12 +92,34 @@ body {
     display: block;
 }
 
-/* Меню-бургер */
-.burger {
+.nav-links-mobile {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    background: #2c3e50;
+    padding: 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    z-index: 999;
+}
+
+.nav-links-mobile.active {
+    display: flex;
+}
+
+.nav-links-mobile a {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+}
+
+.burger {
+    display: none;
     cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .burger div {
@@ -106,17 +128,15 @@ body {
     background: #fff;
 }
 
-.nav-links-mobile {
-    display: none;
-    flex-direction: column;
-    background: #2c3e50;
-    padding: 10px;
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+    }
 }
 
-.nav-links-mobile a {
-    padding: 10px 0;
-    border-bottom: 1px solid #444;
-}
 
 /* Главный экран */
 .hero {
