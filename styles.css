@@ -1,112 +1,86 @@
 /* Общие стили */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     color: #333;
+    background-color: #f8f9fa;
 }
 
-h1, h2, h3 {
-    margin: 20px 0;
-    color: #2c3e50;
-    text-align: center;
-}
-
-p {
-    margin: 10px 0;
-    text-align: justify;
-    padding: 0 10px;
-}
-
-/* Стили для контейнера */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+/* Заголовки */
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subtext {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0 20px;
+    color: #555;
+}
+
+/* Кнопка */
+.button {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #1d6fa5;
+}
+
+/* Секция SEO */
+.seo-text {
     background: #fff;
-    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили кнопок */
-button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+.seo-text p, .seo-text ul {
+    margin: 15px 0;
 }
 
-button:hover {
-    background-color: #2980b9;
+.seo-text ul {
+    list-style: disc;
+    margin-left: 20px;
 }
 
-/* Стили для таблиц */
-table {
+/* Секция видео */
+.video-section {
+    text-align: center;
+}
+
+video {
     width: 100%;
-    border-collapse: collapse;
+    max-width: 800px;
     margin: 20px 0;
-    font-size: 16px;
-    text-align: left;
+    border: 2px solid #ddd;
+    border-radius: 5px;
 }
 
-th, td {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-}
-
-th {
+/* Подвал */
+.footer {
+    text-align: center;
+    padding: 20px;
     background-color: #2c3e50;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Стили для видео и canvas */
-video, canvas {
-    display: block;
-    margin: 20px auto;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    max-width: 100%;
-}
-
-/* Стили для форм */
-select, input[type="text"], input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-select:focus, input:focus {
-    border-color: #3498db;
-    outline: none;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    h1, h2, h3 {
-        font-size: 18px;
-    }
-
-    button {
-        width: 100%;
-        padding: 15px;
-        font-size: 18px;
-    }
-
-    table {
-        font-size: 14px;
-    }
+    color: #fff;
+    font-size: 14px;
 }
