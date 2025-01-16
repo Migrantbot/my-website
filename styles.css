@@ -19,11 +19,14 @@ body {
 .navbar {
     background: #2c3e50;
     color: #fff;
-    padding: 15px 0;
+    padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-logo {
@@ -38,11 +41,11 @@ body {
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    gap: 20px;
 }
 
 .nav-links > li {
     position: relative;
-    margin-left: 20px;
 }
 
 .nav-links a {
@@ -89,6 +92,32 @@ body {
     display: block;
 }
 
+/* Меню-бургер */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+}
+
+.nav-links-mobile {
+    display: none;
+    flex-direction: column;
+    background: #2c3e50;
+    padding: 10px;
+}
+
+.nav-links-mobile a {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
 /* Главный экран */
 .hero {
     display: flex;
@@ -96,16 +125,19 @@ body {
     justify-content: space-between;
     padding: 50px 0;
     background: #eef4ff;
+    flex-wrap: wrap;
 }
 
 .hero-content {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-text-content {
+.text-content {
     flex: 1;
+    max-width: 500px;
 }
 
 .text-content h1 {
@@ -171,4 +203,36 @@ text-content {
     color: #fff;
     text-align: center;
     padding: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        display: flex;
+    }
+
+    .text-content h1 {
+        font-size: 2rem;
+    }
+
+    .video-content video {
+        max-width: 100%;
+    }
 }
