@@ -9,6 +9,132 @@
     <!-- Подключение Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        /* Стили меню */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #1abc9c;
+        }
+
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #eef4ff;
+        }
+
+        .video-container {
+            flex: 1 1 45%;
+            max-width: 500px;
+            margin: 10px;
+        }
+
+        .content-container {
+            flex: 1 1 45%;
+            max-width: 500px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .content-container h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .content-container p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .content-container button {
+            padding: 10px 20px;
+            border: none;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .content-container button:hover {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+        }
+
+        .reviews-section {
+            padding: 20px;
+            background-color: #f8f9fc;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .owl-carousel .item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .owl-carousel .item blockquote {
+            font-size: 1rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .owl-carousel .item footer {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Меню -->
@@ -25,7 +151,10 @@
     <!-- Секция с видео и текстом -->
     <section class="hero-section">
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <video controls style="max-width: 100%; height: auto;">
+                <source src="https://smmpirat.ru/assets/video/ads-smmpirat.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео. Вы можете <a href="https://smmpirat.ru/assets/video/ads-smmpirat.mp4">скачать видео</a>.
+            </video>
         </div>
         <div class="content-container">
             <h1>Приветствуем вас!</h1>
@@ -54,24 +183,6 @@
                 <blockquote>
                     <p>"Сервис просто супер! Все сделано быстро и без лишних вопросов."</p>
                     <footer>- Мария Сидорова</footer>
-                </blockquote>
-            </div>
-            <div class="item">
-                <blockquote>
-                    <p>"Отличная работа! Спасибо за помощь в развитии моего бизнеса."</p>
-                    <footer>- Сергей Кузнецов</footer>
-                </blockquote>
-            </div>
-            <div class="item">
-                <blockquote>
-                    <p>"Все выполнено на высшем уровне. Буду обращаться еще!"</p>
-                    <footer>- Анна Васильева</footer>
-                </blockquote>
-            </div>
-            <div class="item">
-                <blockquote>
-                    <p>"Спасибо за профессионализм и внимание к деталям!"</p>
-                    <footer>- Алексей Смирнов</footer>
                 </blockquote>
             </div>
         </div>
