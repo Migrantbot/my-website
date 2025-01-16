@@ -15,15 +15,6 @@
             font-family: 'Roboto', Arial, sans-serif;
             background-color: #f8f9fc;
             color: #333;
-            line-height: 1.6;
-        }
-
-        /* Контейнер */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
         }
 
         /* Меню */
@@ -100,7 +91,6 @@
             display: block;
         }
 
-        /* Бургер-меню */
         .burger {
             display: none;
             cursor: pointer;
@@ -151,43 +141,20 @@
 
         /* Главный экран */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 50px 0;
             background: #eef4ff;
-            flex-wrap: wrap;
+            text-align: center;
         }
 
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .text-content {
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .text-content h1 {
+        .hero h1 {
             font-size: 2.5rem;
             color: #2c3e50;
-            margin-bottom: 15px;
         }
 
-        .text-content p {
+        .hero p {
             font-size: 1.1rem;
             margin-bottom: 20px;
             color: #555;
-        }
-
-        .video-content video {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .button {
@@ -198,13 +165,6 @@
             padding: 15px 30px;
             font-size: 1rem;
             border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Отзывы */
@@ -231,20 +191,11 @@
         .review-item p {
             font-size: 1rem;
             color: #555;
-            margin-bottom: 15px;
         }
 
         .review-item .rating {
             color: #ffc107;
             font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
-        .review-item span {
-            display: block;
-            color: #333;
-            font-size: 0.9rem;
-            margin-top: 10px;
         }
 
         /* Подвал */
@@ -257,17 +208,10 @@
     </style>
 </head>
 <body>
-    <!-- Меню -->
-     <!-- Меню -->
     <nav class="navbar">
         <a href="#" class="nav-logo">SMMpirat</a>
         <ul class="nav-links">
-            <li><a href="#services">Услуги</a>
-                <ul class="dropdown">
-                    <li><a href="#instagram">Instagram</a></li>
-                    <li><a href="#tiktok">TikTok</a></li>
-                </ul>
-            </li>
+            <li><a href="#services">Услуги</a></li>
             <li><a href="#reviews">Отзывы</a></li>
         </ul>
         <div class="burger">
@@ -281,8 +225,34 @@
         </ul>
     </nav>
 
-    <!-- Остальная структура страницы -->
+    <header class="hero">
+        <h1>Накрутка подписчиков</h1>
+        <p>Станьте популярным с помощью нашей платформы!</p>
+        <a href="#" class="button">Попробовать</a>
+    </header>
 
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2>Отзывы наших клиентов</h2>
+            <div class="owl-carousel">
+                <div class="review-item">
+                    <p>“Очень круто!”</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+                <div class="review-item">
+                    <p>“Результат превзошел ожидания.”</p>
+                    <div class="rating">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 SMMpirat. Все права защищены.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const burger = document.querySelector(".burger");
@@ -292,64 +262,6 @@
                 mobileMenu.classList.toggle("active");
             });
 
-            const mobileLinks = mobileMenu.querySelectorAll("a");
-            mobileLinks.forEach(link => {
-                link.addEventListener("click", () => {
-                    mobileMenu.classList.remove("active");
-                });
-            });
-        });
-    </script>
-
-    <!-- Главный экран -->
-    <header class="hero" id="home">
-        <div class="container hero-content">
-            <div class="text-content">
-                <h1>Накрутка подписчиков, лайков и просмотров</h1>
-                <p>Увеличьте популярность своего аккаунта с помощью нашей надёжной платформы. Мы обеспечиваем качественную накрутку, которая реально работает.</p>
-                <a href="https://smmpirat.ru" class="button">Накрутка онлайн</a>
-            </div>
-            <div class="video-content">
-                <video controls>
-                    <source src="https://smmpirat.ru/assets/video/ads-smmpirat.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео. Вы можете <a href="https://smmpirat.ru/assets/video/ads-smmpirat.mp4">скачать видео</a>.
-                </video>
-            </div>
-        </div>
-    </header>
-
-    <!-- Блок с отзывами -->
-    <section class="reviews" id="reviews">
-        <div class="container">
-            <h2>Отзывы наших клиентов</h2>
-            <div class="owl-carousel">
-                <div class="review-item">
-                    <p>“Благодаря SMMpirat мой аккаунт вырос с 1000 подписчиков до 10 000 всего за неделю!”</p>
-                    <div class="rating">★★★★★</div>
-                    <span>- Иван, блогер</span>
-                </div>
-                <div class="review-item">
-                    <p>“Очень качественная работа! Лайки и просмотры добавляются естественно, без блокировок.”</p>
-                    <div class="rating">★★★★★</div>
-                    <span>- Ольга, маркетолог</span>
-                </div>
-                <div class="review-item">
-                    <p>“Я в восторге! SMMpirat помог мне вывести мой бренд на новый уровень.”</p>
-                    <div class="rating">★★★★★</div>
-                    <span>- Дмитрий, предприниматель</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Подвал -->
-    <footer class="footer">
-        <p>© 2025 SMMpirat. Все права защищены.</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script>
             $(".owl-carousel").owlCarousel({
                 items: 1,
                 loop: true,
@@ -357,32 +269,9 @@
                 nav: true,
                 autoplay: true,
                 autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                navText: ["<", ">"]
+                autoplayHoverPause: true
             });
         });
-        
     </script>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const burger = document.querySelector(".burger");
-        const mobileMenu = document.querySelector(".nav-links-mobile");
-
-        // Обработка клика по бургер-меню
-        burger.addEventListener("click", () => {
-            mobileMenu.classList.toggle("active");
-        });
-
-        // Закрытие меню при клике на ссылку
-        const mobileLinks = mobileMenu.querySelectorAll("a");
-        mobileLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                mobileMenu.classList.remove("active");
-            });
-        });
-    });
-</script>
-
 </body>
 </html>
