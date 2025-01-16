@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Классная страница</title>
+    <!-- Подключение Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Подключение Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
+        /* Общие стили */
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
@@ -24,6 +30,7 @@
             color: #16a085;
         }
 
+        /* Стили меню */
         .menu {
             position: fixed;
             width: 100%;
@@ -32,18 +39,15 @@
             background-color: #111;
             z-index: 1000;
             display: flex;
+            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .menu .logo {
-            flex: 1;
+            flex-grow: 1;
             text-align: center;
-        }
-
-        .menu .logo img {
-            max-height: 40px;
         }
 
         .menu ul {
@@ -54,32 +58,27 @@
             gap: 20px;
         }
 
-        .menu ul li {
-            position: relative;
-        }
-
         .menu ul li a {
             font-size: 1rem;
             font-weight: bold;
+            transition: color 0.3s;
         }
 
-        .menu ul li .dropdown {
+        .menu ul li a:hover {
+            color: #16a085;
+        }
+
+        .menu ul.hidden {
             display: none;
-            position: absolute;
-            top: 100%;
             left: 0;
-            background-color: #222;
+            width: 100%;
+            background-color: #111;
+            padding: 10px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-            border-radius: 5px;
         }
 
-        .menu ul li:hover .dropdown {
-            display: block;
-        }
-
-        .menu ul li .dropdown a {
-            padding: 10px 20px;
-            display: block;
+        .menu ul.visible {
+            display: flex;
         }
 
         .menu-icon {
@@ -96,113 +95,244 @@
             background: #fff;
         }
 
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 250px;
-            height: 100%;
-            background-color: #111;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            transition: right 0.3s ease-in-out;
-            z-index: 1001;
-        }
-
-        .side-menu.visible {
-            right: 0;
-        }
-
-        .side-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .side-menu ul li {
-            margin-bottom: 10px;
-        }
-
         @media (max-width: 768px) {
             .menu ul {
                 display: none;
             }
 
-            .menu-icon {
+            .menu ul.visible {
                 display: flex;
             }
 
-            .menu .logo {
-                text-align: left;
+            .menu-icon {
+                display: flex;
             }
         }
 
         @media (min-width: 769px) {
             .menu ul {
-                flex: 1;
-                justify-content: space-around;
+                display: flex;
+                flex-direction: row;
+                position: static;
+                background-color: transparent;
+                box-shadow: none;
             }
 
-            .menu .logo {
-                flex: 0;
+            .menu ul.hidden {
+                display: flex;
             }
 
-            .side-menu {
+            .menu-icon {
                 display: none;
             }
         }
+
+        /* Hero-секция */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .video-container {
+            flex: 1 1 45%;
+            max-width: 500px;
+            margin: 10px;
+        }
+
+        .content-container {
+            flex: 1 1 45%;
+            max-width: 500px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .content-container h1 {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .content-container p {
+            font-size: 1.2rem;
+            color: #bbb;
+        }
+
+        .content-container button {
+            padding: 10px 20px;
+            border: none;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .content-container button:hover {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+        }
+
+        /* Секция отзывов */
+        .reviews-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .reviews-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .owl-carousel .item {
+            background: #111;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+        }
+
+        .owl-carousel .item blockquote {
+            font-size: 1rem;
+            color: #bbb;
+            font-style: italic;
+        }
+
+        .owl-carousel .item footer {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Футер */
+        footer {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            color: #bbb;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #1abc9c;
+        }
+
+        footer a:hover {
+            color: #16a085;
+        }
     </style>
 </head>
+
 <body>
     <!-- Меню -->
     <nav class="menu">
+        <div class="logo">
+            <img src="https://via.placeholder.com/150x50.png?text=Logo" alt="Логотип">
+        </div>
         <span class="menu-icon" id="menu-icon">
             <span></span>
             <span></span>
             <span></span>
         </span>
-        <div class="logo">
-            <img src="https://via.placeholder.com/150x40?text=LOGO" alt="Логотип">
-        </div>
-        <ul>
+        <ul id="menu-items" class="hidden">
             <li><a href="#">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
             <li>
-                <a href="#about">О нас</a>
-                <div class="dropdown">
-                    <a href="#team">Наша команда</a>
-                    <a href="#history">История</a>
-                </div>
+                <a href="#">Услуги</a>
+                <ul>
+                    <li><a href="#service1">Услуга 1</a></li>
+                    <li><a href="#service2">Услуга 2</a></li>
+                    <li><a href="#service3">Услуга 3</a></li>
+                </ul>
             </li>
-            <li><a href="#services">Услуги</a></li>
             <li><a href="#contact">Контакты</a></li>
         </ul>
     </nav>
 
-    <!-- Боковое меню -->
-    <div class="side-menu" id="side-menu">
-        <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#contact">Контакты</a></li>
-        </ul>
-    </div>
-
+    <!-- Секция с видео и текстом -->
     <section class="hero-section">
-        <h1>Добро пожаловать!</h1>
-        <p>Это пример элегантного черного сайта с адаптивным меню.</p>
+        <div class="video-container">
+            <video controls style="max-width: 100%; height: auto;">
+                <source src="https://smmpirat.ru/assets/video/ads-smmpirat.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео. Вы можете <a href="https://smmpirat.ru/assets/video/ads-smmpirat.mp4">скачать видео</a>.
+            </video>
+        </div>
+        <div class="content-container">
+            <h1>Приветствуем вас!</h1>
+            <p>Здесь вы найдете все необходимое для вашего бизнеса. Мы предлагаем лучшие услуги по продвижению и развитию вашего проекта.</p>
+            <button onclick="window.location.href='http://example.com'">Перейти на сайт</button>
+        </div>
     </section>
 
-    <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const sideMenu = document.getElementById('side-menu');
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews-section">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <blockquote>
+                    <p>"Отличный сервис! Быстро и качественно помогли с моей задачей."</p>
+                    <footer>- Иван Иванов</footer>
+                </blockquote>
+            </div>
+            <div class="item">
+                <blockquote>
+                    <p>"Очень доволен результатом работы команды. Рекомендую!"</p>
+                    <footer>- Петр Петров</footer>
+                </blockquote>
+            </div>
+            <div class="item">
+                <blockquote>
+                    <p>"Сервис просто супер! Все сделано быстро и без лишних вопросов."</p>
+                    <footer>- Мария Сидорова</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
 
-        menuIcon.addEventListener('click', () => {
-            sideMenu.classList.toggle('visible');
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2025 Все права защищены. <a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+    </footer>
+
+    <!-- Скрипт подключения Owl Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+
+        // Скрипт для бургер-меню
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            const menuItems = document.getElementById('menu-items');
+            menuItems.classList.toggle('hidden');
+            menuItems.classList.toggle('visible');
         });
     </script>
 </body>
+
 </html>
