@@ -1,22 +1,12 @@
-const carouselItems = document.querySelectorAll('.carousel-item');
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-let currentIndex = 0;
-
-function updateCarousel() {
-    carouselItems.forEach((item, index) => {
-        item.classList.toggle('active', index === currentIndex);
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 3 }
+        }
     });
-}
-
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
-    updateCarousel();
 });
-
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-    updateCarousel();
-});
-
-updateCarousel();
